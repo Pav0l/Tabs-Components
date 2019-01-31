@@ -3,12 +3,19 @@ let contentItems = document.querySelectorAll('.tabs-item');
 // Modify current tabs links into left and right button for carousel
 let tabsLinks = document.querySelector('.tabs-links');
 tabsLinks.classList.add('carousel-tabs-link');
-let leftBtn = tabsLinks.children[0];
-let rightBtn = tabsLinks.children[3];
+let leftBtn = tabsLinks.firstElementChild;
+let rightBtn = tabsLinks.lastElementChild;
 leftBtn.innerText = "Left";
 rightBtn.innerText = "Right";
-tabsLinks.children[1].style = "display: none";
-tabsLinks.children[2].style = "display: none";
+
+// Hide all tabs links instead the first and last one
+for (let i = 1; i < tabsLinks.children.length-1; i++) {
+    console.log(tabsLinks.children[i]);
+    tabsLinks.children[i].classList.add('carousel-tabs-hide');    
+}
+
+// tabsLinks.children[1].style = "display: none";
+// tabsLinks.children[2].style = "display: none";
 
 leftBtn.addEventListener('click', slideCarouselLeft);
 rightBtn.addEventListener('click', slideCarouselRight);

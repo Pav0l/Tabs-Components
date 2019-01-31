@@ -93,6 +93,9 @@
 .tabs .carousel-tabs-link {
   justify-content: space-between;
 }
+.tabs .carousel-tabs-hide {
+  display: none;
+}
 body {
   box-sizing: border-box;
   min-width: 300px;
