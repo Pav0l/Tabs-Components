@@ -3,25 +3,22 @@ let contentItems = document.querySelectorAll('.tabs-item');
 // Modify current tabs links into left and right button for carousel
 let tabsLinks = document.querySelector('.tabs-links');
 tabsLinks.classList.add('carousel-tabs-link');
-let leftBtn = tabsLinks.firstElementChild;
-let rightBtn = tabsLinks.lastElementChild;
-leftBtn.innerText = "Left";
-rightBtn.innerText = "Right";
 
-// Hide all tabs links instead the first and last one
+    // Hide all tabs links instead the first and last one
 for (let i = 1; i < tabsLinks.children.length-1; i++) {
     console.log(tabsLinks.children[i]);
     tabsLinks.children[i].classList.add('carousel-tabs-hide');    
 }
-
-// tabsLinks.children[1].style = "display: none";
-// tabsLinks.children[2].style = "display: none";
-
+    // Create buttons to click
+let leftBtn = tabsLinks.firstElementChild;
+let rightBtn = tabsLinks.lastElementChild;
+leftBtn.innerText = "Left";
+rightBtn.innerText = "Right";
 leftBtn.addEventListener('click', slideCarouselLeft);
 rightBtn.addEventListener('click', slideCarouselRight);
 // end of tabs links modification
 
-// Create a position counter to stop it going to infinity when clicking btns on carousel
+// Counter to manage position of the 'tabs-item-selected' class
 let currentPosition;
 
 function slideCarouselRight() {
@@ -44,8 +41,6 @@ function slideCarouselRight() {
 
    return currentPosition;
 }
-
-
 
 
 function slideCarouselLeft() {
